@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal | Shekhar Yadav</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="#" class="logo">Job<span>Portal</span></a>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#apis">API Docs</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="tag">JAVA · SPRING BOOT · REST API</span>
+        <h1>Job Portal<br><span>Backend Project</span></h1>
+
+        <p>
+            A backend web application developed using Java and Spring Boot
+            to connect job seekers with hiring teams through user profiles,
+            job postings, applications and social interactions.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="https://github.com/shekharyadav5859/job-portal"
+               target="_blank" class="btn primary">GitHub Repository ↗</a>
+            <a href="#apis" class="btn secondary">Explore APIs</a>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+
+<section id="overview">
+    <h2>Project Overview</h2>
+    <div class="card">
+        <p>
+            Job Portal is a backend web application developed using Java
+            and Spring Boot. It aims to connect job seekers and hiring teams
+            through a centralized platform for user profiles, job postings
+            and user interactions.
+        </p>
+        <p>
+            The project follows a layered architecture to organize
+            application logic, database operations and REST API endpoints.
+            APIs can be tested using Postman or Thunder Client without
+            downloading the project source code.
+        </p>
+    </div>
+</section>
+
+<section id="deployment">
+    <h2>Live Deployment</h2>
+    <div class="card">
+        <p>The backend application is deployed on Render.</p>
+        <p><strong>Backend URL:</strong> Add your actual Render URL here.</p>
+        <p><strong>GitHub:</strong>
+            <a href="https://github.com/shekharyadav5859/job-portal"
+               target="_blank">View Repository</a>
+        </p>
+        <p><strong>Database:</strong> Aiven MySQL</p>
+        <p>Live API endpoints can be tested using Postman.</p>
+    </div>
+</section>
+
+<section id="technologies">
+    <h2>Technologies Used</h2>
+    <div class="card tech-list">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Spring Data JPA</span>
+        <span>Spring Security</span>
+        <span>REST APIs</span>
+        <span>Maven</span>
+        <span>MySQL</span>
+        <span>Aiven MySQL</span>
+        <span>Render</span>
+        <span>GitHub</span>
+        <span>Docker</span>
+        <span>Thunder Client</span>
+    </div>
+</section>
+
+<section id="features">
+    <h2>Project Features</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>User Authentication</h3>
+            <p>Email-based OTP verification, user lookup and login functionality.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>User Profile Management</h3>
+            <p>Create, retrieve, update and delete user profiles.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Job Management</h3>
+            <p>Companies can create, update, delete and retrieve job postings.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Follow System</h3>
+            <p>Users can follow other users and view followers and following lists.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Posts and Pagination</h3>
+            <p>Create posts and retrieve feeds using pagination and infinite scrolling.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Job Applications</h3>
+            <p>Submit job applications and update application status.</p>
+        </div>
+    </div>
+</section>
+
+<section id="apis">
+    <h2>API Documentation</h2>
+    <div class="card">
+        <p>Base URL:<code>https://job-portal-eli9.onrender.com/</code> </p>
+        <p>Testing Tools: Postman / Thunder Client</p>
+        <p>Replace the base URL with your actual deployed backend URL.</p>
+    </div>
+</section>
+
+<section id="auth">
+    <h2>Authentication APIs</h2>
+    <div class="card">
+        <p>Base path: <code>/auth</code></p>
+
+        <div class="table-wrap">
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td>POST</td><td>/auth/send-otp?email={email}</td><td>Send OTP to email</td></tr>
+            <tr><td>POST</td><td>/auth/verify-otp</td><td>Verify OTP and register user</td></tr>
+            <tr><td>GET</td><td>/auth/users</td><td>Retrieve all users</td></tr>
+            <tr><td>POST</td><td>/auth/Login</td><td>User login</td></tr>
+        </table>
+        </div>
+
+        <h3>Verify OTP and Register</h3>
+        <pre>{
+  "email": "user@example.com",
+  "password": "yourPassword",
+  "otp": "123456"
+}</pre>
+
+        <h3>Login Request</h3>
+        <pre>{
+  "email": "user@example.com",
+  "password": "yourPassword"
+}</pre>
+    </div>
+</section>
+
+<section id="profile">
+    <h2>User Profile APIs</h2>
+    <div class="card">
+        <p>Base path: <code>/about-user</code></p>
+
+        <div class="table-wrap">
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td>POST</td><td>/about-user</td><td>Create profile</td></tr>
+            <tr><td>GET</td><td>/about-user</td><td>Get all profiles</td></tr>
+            <tr><td>GET</td><td>/about-user/{id}</td><td>Get profile by ID</td></tr>
+            <tr><td>PUT</td><td>/about-user/{id}</td><td>Update profile</td></tr>
+            <tr><td>DELETE</td><td>/about-user/{id}</td><td>Delete profile</td></tr>
+        </table>
+        </div>
+
+        <h3>Create Profile Request</h3>
+        <pre>{
+  "userId": 1,
+  "about": "Java Backend Developer passionate about building REST APIs",
+  "education": "B.Tech in Computer Science",
+  "experience": "Fresher",
+  "skills": "Java, Spring Boot, MySQL, REST API",
+  "location": "Indore"
+}</pre>
+        <p>User ID should identify the registered user.</p>
+    </div>
+</section>
+
+<section id="follow">
+    <h2>Follow APIs</h2>
+    <div class="card">
+        <p>Base path: <code>/follow</code></p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td>POST</td><td>/follow</td><td>Follow a user</td></tr>
+            <tr><td>GET</td><td>/follow</td><td>Get follow records</td></tr>
+            <tr><td>GET</td><td>/follow/following/{id}</td><td>Following list</td></tr>
+            <tr><td>GET</td><td>/follow/followers/{id}</td><td>Followers list</td></tr>
+            <tr><td>DELETE</td><td>/follow/{id}</td><td>Unfollow</td></tr>
+        </table>
+        </div>
+
+        <h3>Follow Request</h3>
+        <pre>{
+  "follower": 1,
+  "following": 2
+}</pre>
+    </div>
+</section>
+
+<section id="posts">
+    <h2>Post APIs</h2>
+    <div class="card">
+        <p>Base path: <code>/Post</code></p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td>GET</td><td>/Post/get</td><td>Get all posts</td></tr>
+            <tr><td>GET</td><td>/Post/get/{id}</td><td>Get post by ID</td></tr>
+            <tr><td>POST</td><td>/Post/save</td><td>Create post</td></tr>
+            <tr><td>DELETE</td><td>/Post/delete/{id}</td><td>Delete post</td></tr>
+            <tr><td>GET</td><td>/Post/user/{userId}</td><td>Posts by user</td></tr>
+            <tr><td>GET</td><td>/Post/main?lastId=0&limit=10</td><td>Paginated feed</td></tr>
+        </table>
+        </div>
+
+        <h3>Create Post Request</h3>
+        <pre>{
+  "userId": 1,
+  "imgUrl": "https://example.com/image.jpg",
+  "discription": "Learning Java and Spring Boot",
+  "tittle": "My First Post"
+}</pre>
+
+        <p>Pagination parameters:</p>
+        <ul>
+            <li>lastId: Last retrieved post ID (default 0).</li>
+            <li>limit: Number of posts per request (default 10).</li>
+        </ul>
+    </div>
+</section>
+
+<section id="jobs">
+    <h2>Jobs By Company APIs</h2>
+    <div class="card">
+        <p>Base path: <code>/Job/Company</code></p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td>POST</td><td>/Job/Company/post</td><td>Create job</td></tr>
+            <tr><td>GET</td><td>/Job/Company/get</td><td>Get all jobs</td></tr>
+            <tr><td>DELETE</td><td>/Job/Company/delet/{id}</td><td>Delete job</td></tr>
+            <tr><td>PUT</td><td>/Job/Company/put/{id}</td><td>Update job</td></tr>
+            <tr><td>GET</td><td>/Job/Company/singal/{companyId}</td><td>Jobs by company</td></tr>
+        </table>
+        </div>
+
+        <h3>Create Job Request</h3>
+        <pre>{
+  "title": "Java Backend Developer",
+  "description": "Looking for Java and Spring Boot developer",
+  "companyName": "Tech Solutions Pvt. Ltd.",
+  "location": "Indore",
+  "jobType": "Full-time",
+  "salaryMin": 400000,
+  "salaryMax": 700000,
+  "skillsRequired": "Java, Spring Boot, MySQL, REST API",
+  "companyId": 1
+}</pre>
+        <p>Endpoint spellings are shown as supplied; verify them in your controller mappings.</p>
+    </div>
+</section>
+
+<section id="apply">
+    <h2>Job Application APIs</h2>
+    <div class="card">
+        <p>Base path: <code>/apply</code></p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td>POST</td><td>/apply</td><td>Submit application</td></tr>
+            <tr><td>GET</td><td>/apply</td><td>Get all applications</td></tr>
+            <tr><td>GET</td><td>/apply/{id}</td><td>Get application by ID</td></tr>
+            <tr><td>PUT</td><td>/apply/{id}/reply</td><td>Update status and reply</td></tr>
+        </table>
+        </div>
+
+        <h3>Apply Request</h3>
+        <pre>{
+  "candidateId": 1,
+  "companyId": 2,
+  "postId": 5,
+  "link": "https://example.com/resume",
+  "status": "APPLIED",
+  "companyReply": "",
+  "email": "candidate@example.com"
+}</pre>
+    </div>
+</section>
+
+<section id="architecture">
+    <h2>Project Architecture</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>Entity</h3>
+            <p>Defines data models mapped to database tables.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Repository</h3>
+            <p>Provides database operations through Spring Data JPA.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Service</h3>
+            <p>Contains business logic and validation.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Controller</h3>
+            <p>Exposes REST API endpoints.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Configuration</h3>
+            <p>Defines application and security settings.</p>
+        </div>
+    </div>
+</section>
+
+<section id="future">
+    <h2>Future Improvements</h2>
+    <div class="card">
+        <ul>
+            <li>Complete and strengthen authentication.</li>
+            <li>Implement role-based access for job seekers and hiring teams.</li>
+            <li>Expand job application functionality.</li>
+            <li>Add company profile management.</li>
+            <li>Improve request validation and exception handling.</li>
+            <li>Add automated tests.</li>
+            <li>Publish complete API documentation.</li>
+            <li>Improve deployment reliability and monitoring.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="author">
+    <h2>Author</h2>
+    <div class="card">
+        <h3>Shekhar Yadav</h3>
+        <p>Java Backend Developer</p>
+        <a href="https://github.com/shekharyadav5859/job-portal"
+           target="_blank">GitHub Repository ↗</a>
+        <p class="muted"></p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© <span id="year"></span> Shekhar Yadav | Job Portal Project</p>
+</footer>
+
+</body>
+</html>
